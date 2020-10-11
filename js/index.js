@@ -13,7 +13,7 @@ var map = L.map("map", {
 	zoomControl: false
 });
 L.control.attribution({
-	prefix: "<a href='https://bbs.mihoyo.com/ys/article/1328298' target='_blank'>사용설명</a>"
+	prefix: "<a href='https://github.com/chocosobo/genshinmap-ko/blob/master/README.md' target='_blank'>사용설명</a>"
 }).addTo(map);
 L.control.zoom({
 	zoomInTitle: '+',
@@ -325,7 +325,7 @@ function onEachFeature(feature, layer) {
 	// popupHtml += '<div class="myPopPicture">';
 	// popupHtml += '<img src=comment_png/' + key + '.jpg onerror="javascript:$(\'.myPopComment,.myPopPicture\').addClass(\'disable\');$(\'.myPopComment\').css({\'cursor\': \'default\'})">';
 	// popupHtml += '</div>';
-	// popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"><p class="switchOff">未完成</p><p class="switchOn">已完成</p><div class="switchButton"><div class="switchButtonIcon"><p>未完成</p></div></div></div>';
+	// popupHtml += '<div class="' + switchClass + '" onclick="MarkPoint(this)" data-key="' + key + '"><p class="switchOff">미완료</p><p class="switchOn">완료</p><div class="switchButton"><div class="switchButtonIcon"><p>未完成</p></div></div></div>';
 	// popupHtml += '<div class="tipcard"></div>'
 	// popupHtml += '</div>';
 	layer.bindPopup();
@@ -474,7 +474,7 @@ function MarkPoint(element) {
 		that.addClass("myPopSwitchDone");
 		that.removeClass("myPopSwitchTodo");
 		setTimeout(function () {
-			that.find(".switchButton p").html("已完成");
+			that.find(".switchButton p").html("완료");
 		}, 100);
 		setTimeout(function () {
 			closePop();
@@ -483,7 +483,7 @@ function MarkPoint(element) {
 		that.addClass("myPopSwitchTodo");
 		that.removeClass("myPopSwitchDone");
 		setTimeout(function () {
-			that.find(".switchButton p").html("未完成");
+			that.find(".switchButton p").html("미완료");
 		}, 100);
 	}
 }
@@ -579,7 +579,7 @@ map.on('popupopen', function (e) {
 	var key = className.substring(5, className.length);
 	var markedFlag = localStorage.getItem(key);
 	var switchClass = (!markedFlag) ? "myPopSwitchTodo" : "myPopSwitchDone";
-	var switchText = (!markedFlag) ? "未完成" : "已完成";
+	var switchText = (!markedFlag) ? "미완료" : "완료";
 	popupHtml = `
 	<div class="myPopContainer">
 		<div class="myPopTitle">
@@ -594,8 +594,8 @@ map.on('popupopen', function (e) {
 			<img src=comment_png/${key}.jpg onerror="javascript:$(\'.myPopComment,.myPopPicture\').addClass(\'disable\');$(\'.myPopComment\').css({\'cursor\': \'default\'})">
 		</div>
 		<div class="${switchClass}" onclick="MarkPoint(this)" data-key="${key}">
-			<p class="switchOff">未完成</p>
-			<p class="switchOn">已完成</p>
+			<p class="switchOff">미완료</p>
+			<p class="switchOn">완료</p>
 			<div class="switchButton">
 				<div class="switchButtonIcon">
 					<p>${switchText}</p>
