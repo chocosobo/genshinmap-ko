@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-	<title>原神地图</title>
+	<title>원신지도</title>
 	<meta charset="utf-8">
 	<script>
 		var _hmt = _hmt || [];
@@ -17,10 +17,11 @@
 <body>
 <form >
 <table align="center" border="1">
-<tr><TD align="right" width=120 height=60>标记文件内容</TD><td><textarea id="markerLogs" style=" height:100%;"
+<tr><TD align="right" width=120 height=60>입력 파일 내용</TD><td><textarea id="markerLogs" style=" height:100%;"
 ></textarea></td></tr>
-<tr><td align="center" height=15 colspan="2">		<button id = "submitMarker">提交</button><button id = "enterIndex" >进入地图</button></td></tr>
+<tr><td align="center" height=15 colspan="2"><button id = "submitMarker">제출</button><button id = "enterIndex" >지도열기</button></td></tr>
 </table>
+이전에 저장한 json 파일을 열어 내용물을 복붙하세요
 </form>
 </body>
 	<script src="js/jquery-3.5.1.min.js"></script>
@@ -36,7 +37,7 @@
 			for(var i = 0 ; i<markerLogArr.length; i++) {
 				localStorage.setItem(markerLogArr[i], "1");
 			}
-			alert("上传成功!");
+			alert("불러오기 성공!");
 		})
 		$("#enterIndex").click(function() {
 		    window.event.returnValue = false;

@@ -4,7 +4,7 @@
 <head>
 	<meta name="baidu-site-verification" content="code-GKb2vGn6sE" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-	<title>原神地图</title>
+	<title>원신지도</title>
 	<meta charset="utf-8">
 	<script>
 		var _hmt = _hmt || [];
@@ -34,11 +34,11 @@
 	</br>不能下载？<button id="submitMarker2">点击复制记录到剪切板</button>
 	</br>PS.在线地图中点击存档也可下载点位记录并记录到剪切板或用下方按钮跳转到上传点位记录页面
 	</br>
-	</br><button id="update">点击跳转到上传页面</button>
+	</br><button id="update">로컬 파일 업로드</button>
 	</br>
-	</br><button id="enterIndex">进入聚合版在线地图</button>
+	</br><button id="enterIndex">지도 입력</button>
 	</br>
-	</br><button id="enterIndex2">进入无聚合版在线地图</button>
+	</br><button id="enterIndex2">지도 입력 없이 시작</button>
 </body>
 <script>
 	// 复制的方法
@@ -87,7 +87,7 @@
 		toolresult = JSON.stringify(markedLog);
 		var texts = toolresult
 		copyText(texts, function () {
-			alert('复制成功 \n复制内容' + texts)
+			alert('복사성공 \n복사 내용' + texts)
 		})
 		console.log(toolresult);
 	})
@@ -101,7 +101,7 @@
 	})
 	//全部清空
 	$("#clearAllLayer").click(function () {
-		var msg = "您确定要清空所有标记吗？您可以先保存数据到本地再进行操作以免数据丢失。";
+		var msg = "모든 태그를 삭제합니까? 손실 방지를 위해 미리 저장하세요.";
 		if (confirm(msg) == true) {
 			for (var j = 0; j < 50; j++) {
 				for (var i = 0; i < 1200; i++) {
@@ -109,7 +109,7 @@
 					localStorage.setItem(key, "");
 				}
 			}
-			alert("所有标记已清空");
+			alert("모든 태그 삭제");
 			return true; //你也可以在这里做其他的操作
 		} else {
 			return false;
@@ -125,7 +125,7 @@
 	})
 	$("#update").click(function () {
 		window.event.returnValue = false;
-		window.location.href = 'shangchuan.html';
+		window.location.href = '불러오기.html';
 	})
 </script>
 
