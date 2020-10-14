@@ -2,6 +2,8 @@
 <html>
 
 <head>
+	<meta name="keywords" content="原神, 原神地图, 原神攻略, 原神宝箱位置" />
+	<meta name="description" content="米游社空荧酒馆制作的原神全资源攻略地图。" />
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
 	<title>原神地图</title>
 	<meta charset="utf-8">
@@ -28,7 +30,6 @@
 						id="enterIndex">지도열기</button></td>
 			</tr>
 		</table>
-																	  
 	</form>
 </body>
 <script src="js/jquery-3.5.1.min.js"></script>
@@ -36,10 +37,7 @@
 		$("#submitMarker").click(function () {
 		var msg = "새 기록을 제출합니까? 현재 저장되어있는 데이터가 삭제되니 필요시 먼저 저장 후 제출해주세요";
 		if (confirm(msg) == true) {
-						   
 			localStorage.clear();
-	 
-	
 			var markerLogArr = JSON.parse($("#markerLogs").val());
 			for (var i = 0; i < markerLogArr.length; i++) {
 				localStorage.setItem(markerLogArr[i], "1");
