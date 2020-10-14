@@ -7,7 +7,7 @@
 1. 필터를 여닫아 표시 항목 선택
 2. 마크를 클릭해 완료/미완료 표기 가능
 
-10/14 버전 원본에서 가져옴
+10/15 버전 원본에서 가져옴
 https://gitee.com/blacklotusccw/yuan-shen-map
 
 
